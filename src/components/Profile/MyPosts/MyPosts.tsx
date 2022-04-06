@@ -3,7 +3,7 @@ import s from './MyPosts.module.css'
 import Post from './Post/Post'
 const MyPosts = () => {
   return (
-    <div>
+    <div className={s.post}>
       <div>My posts</div>
       <textarea></textarea>
       <button className={s.button}>add</button>
