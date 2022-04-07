@@ -5,9 +5,6 @@ import Profile_Ava from './Profile_ava/Profile_ava'
 const Profile = () => {
   return (
     <div>
-      <div className={s.prof}>
-        <img src="https://natworld.info/wp-content/uploads/2018/08/babochki-i-ptichki.jpg" />
-      </div>
       <Profile_Ava />
       <MyPosts />
     </div>

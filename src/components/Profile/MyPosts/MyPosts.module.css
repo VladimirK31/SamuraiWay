@@ -1,9 +1,9 @@
 .post {
-  padding: 30px;
+  padding: 10px;
 }
 
 .button {
   background-color: white;
-  padding: 3px 3px 3px 3px;
+  padding: 10px 10px 10px 10px;
   font: 400 10px system-ui;
 }
