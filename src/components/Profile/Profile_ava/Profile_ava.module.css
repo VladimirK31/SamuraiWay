@@ -1,12 +1,12 @@
 .prof img {
   width: 70px;
-  padding: 10px;
 }
 
 .prof {
   color: rgb(255, 17, 0);
   display: inline-block;
-  padding: 20px;
+  margin-left: 10px;
+  margin-top: 10px;
 }
 .profile img {
   width: 100%;
