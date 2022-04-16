@@ -1,7 +1,6 @@
 .dialogs {
   display: grid;
   grid-template-columns: 2fr 10fr;
-  text-decoration-line: none;
 }
 
 .dialogItem {
@@ -13,10 +12,14 @@
   text-decoration: none;
 }
 
-.messages {
-  padding: 10px;
+.messages img {
+  padding: 5px;
+}
+.message {
   color: red;
 }
 
-.messege {
+.dialogs img {
+  width: 20px;
+  padding: 5px;
 }

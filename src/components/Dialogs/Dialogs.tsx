@@ -4,10 +4,11 @@ import s from './Dialogs.module.css'
 import Message from './Message/Message'
 
 const Dialogs = (props: any) => {
-  let dialogsElements = props.dialogs.map((d: { name: any; id: any }) => (
+  debugger
+  let dialogsElements = props.state.dialogs.map((d: { name: any; id: any }) => (
     <DialogItem name={d.name} id={d.id} />
   ))
-  let messagesElements = props.messages.map(
+  let messagesElements = props.state.messages.map(
     (m: { message: string; id: number }) => (
       <Message message={m.message} id={m.id} />
     )

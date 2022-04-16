@@ -1,7 +1,10 @@
 .nav {
   grid-area: n;
   background-color: rgb(83, 156, 216);
-  padding: 20px;
+}
+
+.item {
+  padding-left: 20px;
 }
 .item a {
   color: white;
@@ -9,4 +12,14 @@
 }
 .item a.activeLink {
   color: rgb(255, 0, 0);
+}
+
+.settings {
+  color: white;
+  padding: 20px;
+  text-decoration: none;
+}
+
+.friends {
+  padding: 20px;
 }
