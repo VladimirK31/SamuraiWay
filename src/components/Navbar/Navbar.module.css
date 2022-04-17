@@ -21,5 +21,7 @@
 }
 
 .friends {
-  padding: 20px;
+  padding-top: 50px;
+  padding-left: 20px;
+  color: rgb(100, 220, 20);
 }
