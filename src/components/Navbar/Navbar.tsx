@@ -4,7 +4,6 @@ import Friends from '../Friends/Friends'
 import s from './Navbar.module.css'
 
 function Navbar(props: any) {
-  debugger
   return (
     <nav className={s.nav}>
       <div className={s.item}>

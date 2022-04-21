@@ -1,3 +1,5 @@
+import { rerenderEnteriTree } from '../render'
+
 let state = {
   dialogsPage: {
     dialogs: [
@@ -28,6 +30,16 @@ let state = {
       { id: 3, name: 'Evlampiy', images: 'IMG' },
     ],
   },
+}
+
+export const addPost = (postMessage: any) => {
+  let newPost = {
+    id: 3,
+    message: postMessage,
+    likesCount: 0,
+  }
+  state.profilePage.posts.push(newPost)
+  rerenderEnteriTree(state)
 }
 
 export default state

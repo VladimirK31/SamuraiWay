@@ -4,13 +4,17 @@ import Post from './Post/Post'
 const MyPosts = (props: any) => {
   let postsElements = props.posts.map(
     (p: { message: any; likesCount: any }) => (
-      <Post message={p.message} likesCount={p.likesCount} />
+      <Post
+        message={p.message}
+        likesCount={p.likesCount}
+        addPost={props.addPost}
+      />
     )
   )
   let newPostElement = React.createRef<HTMLTextAreaElement>()
   let addPost = () => {
     let text = newPostElement.current?.value
-    alert(text)
+    props.addPost(text)
   }
 
   return (

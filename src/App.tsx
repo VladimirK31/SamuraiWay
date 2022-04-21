@@ -9,10 +9,8 @@ import Navbar from './components/Navbar/Navbar'
 import News from './components/News/News'
 import Profile from './components/Profile/Profile'
 import Settings from './components/Settings/Settings'
-import state from './Redux/State'
 
 const App = (props: any) => {
-  debugger
   return (
     <BrowserRouter>
       <div className="app-wraper">
@@ -25,7 +23,12 @@ const App = (props: any) => {
           />
           <Route
             path="/Profile"
-            render={() => <Profile state={props.state.profilePage} />}
+            render={() => (
+              <Profile
+                state={props.state.profilePage}
+                addPost={props.addPost}
+              />
+            )}
           />
           <Route path="/News" render={() => <News />} />
           <Route path="/Music" render={() => <Music />} />
