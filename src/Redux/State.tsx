@@ -18,6 +18,7 @@ let state = {
     ],
   },
   profilePage: {
+    newPostText: 'Hello',
     posts: [
       { id: 1, message: 'How are you?', likesCount: 15 },
       { id: 1, message: "It's my first post!", likesCount: 10 },
@@ -32,13 +33,18 @@ let state = {
   },
 }
 
-export const addPost = (postMessage: any) => {
+export const addPost = () => {
   let newPost = {
     id: 3,
-    message: postMessage,
+    message: state.profilePage.newPostText,
     likesCount: 0,
   }
   state.profilePage.posts.push(newPost)
+  state.profilePage.newPostText = ''
+  rerenderEnteriTree(state)
+}
+export const updateNewPostText = (newText: any) => {
+  state.profilePage.newPostText = newText
   rerenderEnteriTree(state)
 }
 

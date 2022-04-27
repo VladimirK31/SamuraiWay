@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { createRef } from 'react'
 import s from './MyPosts.module.css'
 import Post from './Post/Post'
 const MyPosts = (props: any) => {
@@ -11,17 +11,25 @@ const MyPosts = (props: any) => {
       />
     )
   )
-  let newPostElement = React.createRef<HTMLTextAreaElement>()
+  let newPostElement = createRef<HTMLTextAreaElement>()
   let addPost = () => {
+    props.addPost()
+  }
+
+  let changePostText = () => {
     let text = newPostElement.current?.value
-    props.addPost(text)
+    props.updateNewPostText(text)
   }
 
   return (
     <div className={s.post}>
       <h3>My posts</h3>
       <div>
-        <textarea ref={newPostElement}></textarea>
+        <textarea
+          onChange={changePostText}
+          ref={newPostElement}
+          value={props.newPostText}
+        />
       </div>
       <div>
         <button className={s.button} onClick={addPost}>

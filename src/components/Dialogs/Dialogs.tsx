@@ -24,7 +24,7 @@ const Dialogs = (props: any) => {
       <div className={s.dialogs}>
         <div className={s.dialogItem}>{dialogsElements}</div>
         <div className={s.messages}>{messagesElements}</div>
-        <textarea ref={newMessegeElement}></textarea>
+        <textarea ref={newMessegeElement} value="hello" />
         <button className={s.button} onClick={addMessage}>
           send
         </button>
