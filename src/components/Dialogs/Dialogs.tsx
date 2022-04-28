@@ -10,10 +10,10 @@ type DialogType = {
 
 const Dialogs = (props: DialogType) => {
   let dialogsElements = props.dialogsPage.dialogs.map(
-    (d: { name: string; id: number }) => <DialogItem name={d.name} id={d.id} />
+    (d: { name: string; id: string }) => <DialogItem name={d.name} id={d.id} />
   )
   let messagesElements = props.dialogsPage.messages.map(
-    (m: { message: string; id: number }) => (
+    (m: { message: string; id: string }) => (
       <Message message={m.message} id={m.id} />
     )
   )

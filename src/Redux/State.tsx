@@ -1,21 +1,22 @@
+import { v1 } from 'uuid'
 import { rerenderEnteriTree } from '../render'
 
 export type FriendsType = {
-  id: number
+  id: string
   name: string
   images: string
 }
 export type PostsType = {
-  id: number
+  id: string
   message: string
   likesCount: number
 }
 export type MessagesType = {
-  id: number
+  id: string
   message: string
 }
 export type DialogsType = {
-  id: number
+  id: string
   name: string
 }
 export type NavbarFriendsType = {
@@ -38,39 +39,39 @@ export type RootStateType = {
 export let state: RootStateType = {
   dialogsPage: {
     dialogs: [
-      { id: 1, name: 'Arkadiy' },
-      { id: 2, name: 'Anufriy' },
-      { id: 3, name: 'Evlampiy' },
-      { id: 4, name: 'Sofija' },
-      { id: 5, name: 'Akakiy' },
+      { id: v1(), name: 'Arkadiy' },
+      { id: v1(), name: 'Anufriy' },
+      { id: v1(), name: 'Evlampiy' },
+      { id: v1(), name: 'Sofija' },
+      { id: v1(), name: 'Akakiy' },
     ],
     messages: [
-      { id: 1, message: 'Hello' },
-      { id: 2, message: 'How are you?' },
-      { id: 3, message: 'Where you from?' },
-      { id: 4, message: 'KokokoKokokoKokoko' },
-      { id: 5, message: 'Kokoko' },
+      { id: v1(), message: 'Hello' },
+      { id: v1(), message: 'How are you?' },
+      { id: v1(), message: 'Where you from?' },
+      { id: v1(), message: 'KokokoKokokoKokoko' },
+      { id: v1(), message: 'Kokoko' },
     ],
   },
   profilePage: {
     newPostText: 'Hello',
     posts: [
-      { id: 1, message: 'How are you?', likesCount: 15 },
-      { id: 1, message: "It's my first post!", likesCount: 10 },
+      { id: v1(), message: 'How are you?', likesCount: 15 },
+      { id: v1(), message: "It's my first post!", likesCount: 10 },
     ],
   },
   navbarFriends: {
     friends: [
-      { id: 1, name: 'Arkadiy', images: 'IMG' },
-      { id: 2, name: 'Anufriy', images: 'IMG' },
-      { id: 3, name: 'Evlampiy', images: 'IMG' },
+      { id: v1(), name: 'Arkadiy', images: 'IMG' },
+      { id: v1(), name: 'Anufriy', images: 'IMG' },
+      { id: v1(), name: 'Evlampiy', images: 'IMG' },
     ],
   },
 }
 
 export const addPost = () => {
   let newPost: PostsType = {
-    id: 3,
+    id: v1(),
     message: state.profilePage.newPostText,
     likesCount: 0,
   }
