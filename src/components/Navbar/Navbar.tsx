@@ -5,7 +5,7 @@ import s from './Navbar.module.css'
 import { NavbarFriendsType, RootStateType } from '../../Redux/State'
 
 type NavbarType = {
-  state: NavbarFriendsType
+  navbarFriends: NavbarFriendsType
 }
 
 function Navbar(props: NavbarType) {
@@ -37,7 +37,7 @@ function Navbar(props: NavbarType) {
         </NavLink>
       </div>
       <div className={s.friends}>
-        <Friends state={props.state.friends} />
+        <Friends state={props.navbarFriends.friends} />
       </div>
     </nav>
   )
