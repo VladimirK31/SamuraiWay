@@ -1,9 +1,18 @@
 import React, { createRef } from 'react'
+import { PostsType, ProfilePageType, RootStateType } from '../../../Redux/State'
 import s from './MyPosts.module.css'
 import Post from './Post/Post'
-const MyPosts = (props: any) => {
+
+type MyPostsType = {
+  newPostText: string
+  posts: Array<PostsType>
+  addPost: () => void
+  updateNewPostText: (newText: string) => void
+}
+
+const MyPosts = (props: MyPostsType) => {
   let postsElements = props.posts.map(
-    (p: { message: any; likesCount: any }) => (
+    (p: { message: string; likesCount: number }) => (
       <Post
         message={p.message}
         likesCount={p.likesCount}
@@ -17,7 +26,7 @@ const MyPosts = (props: any) => {
   }
 
   let changePostText = () => {
-    let text = newPostElement.current?.value
+    let text = newPostElement.current ? newPostElement.current?.value : ''
     props.updateNewPostText(text)
   }
 

@@ -2,8 +2,13 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import Friends from '../Friends/Friends'
 import s from './Navbar.module.css'
+import { NavbarFriendsType, RootStateType } from '../../Redux/State'
 
-function Navbar(props: any) {
+type NavbarType = {
+  state: NavbarFriendsType
+}
+
+function Navbar(props: NavbarType) {
   return (
     <nav className={s.nav}>
       <div className={s.item}>

@@ -1,6 +1,41 @@
 import { rerenderEnteriTree } from '../render'
 
-let state = {
+export type FriendsType = {
+  id: number
+  name: string
+  images: string
+}
+export type PostsType = {
+  id: number
+  message: string
+  likesCount: number
+}
+export type MessagesType = {
+  id: number
+  message: string
+}
+export type DialogsType = {
+  id: number
+  name: string
+}
+export type NavbarFriendsType = {
+  friends: Array<FriendsType>
+}
+export type ProfilePageType = {
+  newPostText: string
+  posts: Array<PostsType>
+}
+export type DialogsPageType = {
+  dialogs: Array<DialogsType>
+  messages: Array<MessagesType>
+}
+export type RootStateType = {
+  dialogsPage: DialogsPageType
+  profilePage: ProfilePageType
+  navbarFriends: NavbarFriendsType
+}
+
+export let state: RootStateType = {
   dialogsPage: {
     dialogs: [
       { id: 1, name: 'Arkadiy' },
@@ -34,7 +69,7 @@ let state = {
 }
 
 export const addPost = () => {
-  let newPost = {
+  let newPost: PostsType = {
     id: 3,
     message: state.profilePage.newPostText,
     likesCount: 0,
@@ -43,9 +78,7 @@ export const addPost = () => {
   state.profilePage.newPostText = ''
   rerenderEnteriTree(state)
 }
-export const updateNewPostText = (newText: any) => {
-  state.profilePage.newPostText = newText
+export const updateNewPostText = (newPostText: string) => {
+  state.profilePage.newPostText = newPostText
   rerenderEnteriTree(state)
 }
-
-export default state

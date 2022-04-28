@@ -9,8 +9,15 @@ import Navbar from './components/Navbar/Navbar'
 import News from './components/News/News'
 import Profile from './components/Profile/Profile'
 import Settings from './components/Settings/Settings'
+import { RootStateType } from './Redux/State'
 
-const App = (props: any) => {
+type AppType = {
+  state: RootStateType
+  updateNewPostText: (newText: string) => void
+  addPost: () => void
+}
+
+const App = (props: AppType) => {
   return (
     <BrowserRouter>
       <div className="app-wraper">
