@@ -5,7 +5,10 @@ import s from './Dialogs.module.css'
 import Message from './Message/Message'
 
 type DialogType = {
+  newMessageText: string
   dialogsPage: DialogsPageType
+  addMessage: () => void
+  updateAddMessage: (newMessageText: string) => void
 }
 
 const Dialogs = (props: DialogType) => {
@@ -20,8 +23,13 @@ const Dialogs = (props: DialogType) => {
   let newMessegeElement = React.createRef<HTMLTextAreaElement>()
 
   let addMessage = () => {
-    let text = newMessegeElement.current?.value
-    alert(text)
+    props.addMessage()
+  }
+  let inputMessegeText = () => {
+    let newMessage = newMessegeElement.current
+      ? newMessegeElement.current?.value
+      : ''
+    props.updateAddMessage(newMessage)
   }
 
   return (
@@ -29,7 +37,11 @@ const Dialogs = (props: DialogType) => {
       <div className={s.dialogs}>
         <div className={s.dialogItem}>{dialogsElements}</div>
         <div className={s.messages}>{messagesElements}</div>
-        <textarea ref={newMessegeElement} value="hello" />
+        <textarea
+          onChange={inputMessegeText}
+          ref={newMessegeElement}
+          value={props.newMessageText}
+        />
         <button className={s.button} onClick={addMessage}>
           send
         </button>
